@@ -1,0 +1,132 @@
+{
+  "stone": {
+    "class": "BlockRender",
+    "textures": ["stone.png"]
+  },
+  "grass": {
+    "class": "GrassRender",
+    "textures": ["grass_carried.png", "grass_side_carried.png", "dirt.png"]
+  },
+  "dirt": {
+    "class": "BlockRender",
+    "textures": ["dirt.png", "coarse_dirt.png"]
+  },
+  "cobblestone": {
+    "class": "BlockRender",
+    "textures": ["cobblestone.png"]
+  },
+  "planks": {
+    "class": "BlockRender",
+    "textures": ["planks_oak.png", "planks_spruce.png", "planks_birch.png", "planks_jungle.png", "planks_acacia.png", "planks_big_oak.png"]
+  },
+  "sapling": {
+    "class": "CrossRender",
+    "textures": ["sapling_oak.png", "sapling_spruce.png", "sapling_birch.png", "sapling_jungle.png", "sapling_acacia.png", "sapling_roofed_oak.png"]
+  },
+  "bedrock": {
+    "class": "BlockRender",
+    "textures": ["bedrock.png"]
+  },
+  "flowing_water": {
+    "class": "BlockRender",
+    "textures": ["water_placeholder.png"]
+  },
+  "water": {
+    "class": "BlockRender",
+    "textures": ["water_placeholder.png"]
+  },
+  "flowing_lava": {
+    "class": "BlockRender",
+    "textures": ["lava_placeholder.png"]
+  },
+  "lava": {
+    "class": "BlockRender",
+    "textures": ["lava_placeholder.png"]
+  },
+  "sand": {
+    "class": "BlockRender",
+    "textures": ["sand.png", "red_sand.png"]
+  },
+  "gravel": {
+    "class": "BlockRender",
+    "textures": ["gravel.png"]
+  },
+  "gold_ore": {
+    "class": "BlockRender",
+    "textures": ["gold_ore.png"]
+  },
+  "iron_ore": {
+    "class": "BlockRender",
+    "textures": ["iron_ore.png"]
+  },
+  "coal_ore": {
+    "class": "BlockRender",
+    "textures": ["coal_ore.png"]
+  },
+  "log": {
+    "class": "LogRender",
+    "textures": ["log_oak.png", "log_oak_top.png", "log_spruce.png", "log_spruce_top.png", "log_birch.png", "log_birch_top.png", "log_jungle.png", "log_jungle_top.png"]
+  },
+  "stripped_oak_log": {
+    "class": "StrippedLogRender",
+    "textures": ["stripped_oak_log.png", "stripped_oak_log_top.png"]
+  },
+  "stripped_birch_log": {
+    "class": "StrippedLogRender",
+    "textures": ["stripped_birch_log.png", "stripped_birch_log_top.png"]
+  },
+  "stripped_dark_oak_log": {
+    "class": "StrippedLogRender",
+    "textures": ["stripped_dark_oak_log.png", "stripped_dark_oak_log_top.png"]
+  },
+  "stripped_acacia_log": {
+    "class": "StrippedLogRender",
+    "textures": ["stripped_acacia_log.png", "stripped_acacia_log_top.png"]
+  },
+  "stripped_jungle_log": {
+    "class": "StrippedLogRender",
+    "textures": ["stripped_jungle_log.png", "stripped_jungle_log_top.png"]
+  },
+  "stripped_spruce_log": {
+    "class": "StrippedLogRender",
+    "textures": ["stripped_spruce_log.png", "stripped_spruce_log_top.png"]
+  },
+  "leaves": {
+    "class": "BlockRender",
+    "alphablend": true,
+    "textures": ["leaves_oak_carried.tga", "leaves_spruce_carried.tga", "leaves_birch_carried.tga", "leaves_jungle_carried.tga"]
+  },
+  "sponge": {
+    "class": "BlockRender",
+    "textures": ["sponge.png", "sponge_wet.png"]
+  },
+  "glass": {
+    "class": "BlockRender",
+    "alphablend": true,
+    "textures": ["glass.png"]
+  },
+  "lapis_ore": {
+    "class": "BlockRender",
+    "textures": ["lapis_ore.png"]
+  },
+  "lapis_block": {
+    "class": "BlockRender",
+    "textures": ["lapis_block.png"]
+  },
+  "dispenser": {
+    "class": "DispenserRender",
+    "textures": ["dispenser_front_horizontal.png","furnace_side.png","furnace_top.png"]
+  },
+  "sandstone": {
+    "class": "SandstoneRender",
+    "textures": ["sandstone_top.png","sandstone_normal.png","sandstone_carved.png","sandstone_smooth.png"]
+  },
+  "noteblock": {
+    "class": "BlockRender",
+    "textures": ["noteblock.png"]
+  },
+  "jukebox": {
+    "class": "GrassRender",
+    "textures": ["jukebox_top.png", "noteblock.png", "noteblock.png"]
+  }
+}

@@ -5,7 +5,7 @@ class MCFunction():
         self.blocks = {}
     
     def _setblock(self, x, y, z, name, data, replacetileonly="", replacedata=-1):
-        key = "%d,%d,%d"%(x,y,x)
+        key = "%d,%d,%d"%(x,y,z)
             
         if name == "air":
             if key in self.blocks:
@@ -33,20 +33,20 @@ class MCFunction():
         if len(seps) > 6:
             mode = seps[6]
         if mode == "replace" or mode == "destroy":
-            self.setblock(A[0],A[1],A[2], name, data)
+            self._setblock(A[0],A[1],A[2], name, data)
         else:
-            self.setblock(A[0],A[1],A[2], name, data, "air")
+            self._setblock(A[0],A[1],A[2], name, data, "air")
     
     def dofill(self, seps):
         coor = [s.strip("~") for s in seps[1:7]]
         coor = [0 if s == "" else int(s) for s in coor]
         A = [coor[0], coor[1], coor[2]]
         B = [coor[3], coor[4], coor[5]]
-        if B[0] > A[0]:
+        if B[0] < A[0]:
             A[0], B[0] = B[0], A[0]
-        if B[1] > A[1]:
+        if B[1] < A[1]:
             A[1], B[1] = B[1], A[1]
-        if B[2] > A[2]:
+        if B[2] < A[2]:
             A[2], B[2] = B[2], A[2]
         name = seps[7]
         if name.startswith("minecraft:"):
@@ -69,19 +69,19 @@ class MCFunction():
             for y in range(A[1], B[1]+1):
                 for z in range(A[2], B[2]+1):
                     if mode == "replace":                            
-                        self.setblock(x, y, z, name, data, replacename, replacedata)
+                        self._setblock(x, y, z, name, data, replacename, replacedata)
                     elif mode == "destroy":
-                        self.setblock(x, y, z, name, data)
+                        self._setblock(x, y, z, name, data)
                     elif mode == "keep":
-                        self.setblock(x, y, z, name, data, "air")
+                        self._setblock(x, y, z, name, data, "air")
                     elif mode == "hollow":
                         if x == A[0] or x == B[0] or y == A[1] or y == B[1] or z == A[2] or z == B[2]:
-                            self.setblock(x, y, z, name, data)
+                            self._setblock(x, y, z, name, data)
                         else:
-                            self.setblock(x, y, z, "air", data)
+                            self._setblock(x, y, z, "air", data)
                     elif mode == "outline":
                         if x == A[0] or x == B[0] or y == A[1] or y == B[1] or z == A[2] or z == B[2]:
-                            self.setblock(x, y, z, name, data)
+                            self._setblock(x, y, z, name, data)
     
     def doclone(self, seps):
         coor = [s.strip("~") for s in seps[1:10]]
@@ -89,15 +89,15 @@ class MCFunction():
         A = [coor[0], coor[1], coor[2]]
         B = [coor[3], coor[4], coor[5]]
         C = [coor[6], coor[7], coor[8]]
-        if B[0] > A[0]:
+        if B[0] < A[0]:
             A[0], B[0] = B[0], A[0]
-        if B[1] > A[1]:
+        if B[1] < A[1]:
             A[1], B[1] = B[1], A[1]
-        if B[2] > A[2]:
+        if B[2] < A[2]:
             A[2], B[2] = B[2], A[2]
                       
     def decode(self, line):
-        seps = line.strip().split(" ")
+        seps = line.split(" ")
         if seps[0] == "fill":
             self.dofill(seps)
         elif seps[0] == "setblock":
@@ -107,4 +107,7 @@ class MCFunction():
             
     def loadfile(self, filename):
         for line in open(filename):
-            self.blocks += self.decode(line)
+            line = line.strip()
+            if line[0] == "#":
+                continue
+            self.decode(line)

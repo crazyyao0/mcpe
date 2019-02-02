@@ -119,7 +119,9 @@
   },
   "sandstone": {
     "class": "SandstoneRender",
-    "textures": ["sandstone_top.png","sandstone_normal.png","sandstone_carved.png","sandstone_smooth.png"]
+    "textures": ["sandstone_top.png","sandstone_bottom.png","sandstone_normal.png",
+	             "sandstone_top.png","sandstone_top.png","sandstone_carved.png",
+				 "sandstone_top.png","sandstone_top.png","sandstone_smooth.png"]
   },
   "noteblock": {
     "class": "BlockRender",
@@ -128,5 +130,167 @@
   "jukebox": {
     "class": "GrassRender",
     "textures": ["jukebox_top.png", "noteblock.png", "noteblock.png"]
+  },
+  "golden_rail": {
+    "class": "RailRender",
+    "alphablend": true,
+    "textures": ["rail_golden.png", "rail_normal_turned.png"]
+  },
+  "rail": {
+    "class": "RailRender",
+    "alphablend": true,
+    "textures": ["rail_normal.png", "rail_normal_turned.png"]
+  },
+  "detector_rail": {
+    "class": "RailRender",
+    "alphablend": true,
+    "textures": ["rail_detector.png", "rail_normal_turned.png"]
+  },
+  "web": {
+    "class": "CrossRender",
+    "alphablend": true,
+    "textures": ["web.png"]
+  },
+  "tallgrass": {
+    "class": "CrossRender",
+    "alphablend": true,
+    "textures": ["tallgrass_carried.tga","tallgrass_carried.tga","fern_carried.tga","fern_carried.tga"]
+  },
+  "seagrass": {
+    "class": "SharpRender",
+    "alphablend": true,
+    "textures": ["seagrass_carried.png"]
+  },
+  "coral": {
+    "class": "CrossRender",
+    "alphablend": true,
+    "textures": ["coral_plant_blue.png", "coral_plant_pink.png", "coral_plant_purple.png", "coral_plant_red.png", "coral_plant_yellow.png"]
+  },
+  "deadbush": {
+    "class": "CrossRender",
+    "alphablend": true,
+    "textures": ["deadbush.png"]
+  },
+  "wool": {
+    "class": "BlockRender",
+    "textures": ["wool_colored_white.png", "wool_colored_orange.png", "wool_colored_magenta.png", "wool_colored_light_blue.png",
+	             "wool_colored_yellow.png", "wool_colored_lime.png", "wool_colored_pink.png", "wool_colored_gray.png",
+				 "wool_colored_silver.png", "wool_colored_cyan.png", "wool_colored_purple.png", "wool_colored_blue.png",
+				 "wool_colored_brown.png", "wool_colored_green.png", "wool_colored_red.png", "wool_colored_black.png"]
+  },
+  "yellow_flower": {
+    "class": "CrossRender",
+    "alphablend": true,
+    "textures": ["flower_dandelion.png"]
+  },
+  "red_flower": {
+    "class": "CrossRender",
+    "alphablend": true,
+    "textures": ["flower_rose.png","flower_blue_orchid.png","flower_allium.png","flower_houstonia.png",
+				 "flower_tulip_red.png","flower_tulip_orange.png","flower_tulip_white.png","flower_tulip_pink.png","flower_oxeye_daisy.png"]
+  },
+  "brown_mushroom": {
+    "class": "CrossRender",
+    "alphablend": true,
+    "textures": ["mushroom_brown.png"]
+  },
+  "red_mushroom": {
+    "class": "CrossRender",
+    "alphablend": true,
+    "textures": ["mushroom_red.png"]
+  },
+  "gold_block": {
+    "class": "BlockRender",
+    "textures": ["gold_block.png"]
+  },
+  "iron_block": {
+    "class": "BlockRender",
+    "textures": ["gold_block.png"]
+  },
+  "double_stone_slab": {
+    "class": "SandstoneRender",
+    "textures": ["stone_slab_top.png","stone_slab_top.png","stone_slab_side.png",
+	             "sandstone_top.png","sandstone_bottom.png","sandstone_normal.png",
+				 "planks_oak.png","planks_oak.png","planks_oak.png",
+				 "cobblestone.png","cobblestone.png","cobblestone.png",
+				 "brick.png","brick.png","brick.png",
+				 "stonebrick.png","stonebrick.png","stonebrick.png",
+				 "quartz_block_top.png","quartz_block_bottom.png","quartz_block_side.png",
+				 "nether_brick.png","nether_brick.png","nether_brick.png"]
+  },
+  "stone_slab": {
+    "class": "SlabRender",
+    "textures": ["stone_slab_top.png","stone_slab_top.png","stone_slab_side.png",
+	             "sandstone_top.png","sandstone_bottom.png","sandstone_normal.png",
+				 "planks_oak.png","planks_oak.png","planks_oak.png",
+				 "cobblestone.png","cobblestone.png","cobblestone.png",
+				 "brick.png","brick.png","brick.png",
+				 "stonebrick.png","stonebrick.png","stonebrick.png",
+				 "quartz_block_top.png","quartz_block_bottom.png","quartz_block_side.png",
+				 "nether_brick.png","nether_brick.png","nether_brick.png"]
+  },
+  "coral_block": {
+    "class": "BlockRender",
+    "textures": ["coral_blue.png", "coral_pink.png", "coral_purple.png", "coral_red.png", "coral_yellow.png",
+	             "coral_blue_dead.png", "coral_pink_dead.png", "coral_purple_dead.png", "coral_red_dead.png", "coral_yellow_dead.png"]
+  },
+  "brick_block": {
+    "class": "BlockRender",
+    "textures": ["brick.png"]
+  },
+  "stonebrick": {
+    "class": "BlockRender",
+    "textures": ["stonebrick.png"]
+  },
+  "tnt": {
+    "class": "SandstoneRender",
+    "textures": ["tnt_top.png","tnt_bottom.png","tnt_side.png"]
+  },
+  "bookshelf": {
+    "class": "SandstoneRender",
+    "textures": ["planks_oak.png","planks_oak.png","bookshelf.png"]
+  },
+  "mossy_cobblestone": {
+    "class": "BlockRender",
+    "textures": ["cobblestone_mossy.png"]
+  },
+  "obsidian": {
+    "class": "BlockRender",
+    "textures": ["obsidian.png"]
+  },
+  "mob_spawner": {
+    "class": "BlockRender",
+    "alphablend": true,
+    "textures": ["mob_spawner.png"]
+  },
+  "diamond_ore": {
+    "class": "BlockRender",
+    "textures": ["diamond_ore.png"]
+  },
+  "diamond_block": {
+    "class": "BlockRender",
+    "textures": ["diamond_block.png"]
+  },
+  "crafting_table": {
+    "class": "SandstoneRender",
+    "textures": ["crafting_table_top.png","planks_oak.png","crafting_table_front.png"]
+  },
+  "wheat": {
+    "class": "SharpRender",
+    "alphablend": true,
+    "textures": ["wheat_stage_0.png","wheat_stage_1.png","wheat_stage_2.png","wheat_stage_3.png",
+				 "wheat_stage_4.png","wheat_stage_5.png","wheat_stage_6.png","wheat_stage_7.png"]
+  },
+  "farmland": {
+    "class": "SandstoneRender",
+    "textures": ["farmland_wet.png","dirt.png","dirt.png","farmland_dry.png","dirt.png","dirt.png"]
+  },
+  "furnace": {
+    "class": "DispenserRender",
+    "textures": ["furnace_front_off.png","furnace_side.png","furnace_top.png"]
+  },
+  "lit_furnace": {
+    "class": "DispenserRender",
+    "textures": ["furnace_front_on.png","furnace_side.png","furnace_top.png"]
   }
 }

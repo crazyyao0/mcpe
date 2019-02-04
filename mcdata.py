@@ -1,6 +1,6 @@
 from OpenGL.GL import *
 from OpenGL.GLU import *
-import pygame
+from PIL import Image
 import json
 import numpy as np
 import ctypes
@@ -41,7 +41,7 @@ class BlockRender():
         
         self.vbo = glGenBuffers(1)
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
-        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf, GL_STATIC_DRAW)
+        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf.tobytes(), GL_STATIC_DRAW)
         self.nvertex=36
     
     def rendermodel(self, data):
@@ -89,7 +89,7 @@ class CrossRender(BlockRender):
         
         self.vbo = glGenBuffers(1)
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
-        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf, GL_STATIC_DRAW)
+        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf.tobytes(), GL_STATIC_DRAW)
         self.nvertex=12
         
 class SharpRender(BlockRender):
@@ -114,7 +114,7 @@ class SharpRender(BlockRender):
         
         self.vbo = glGenBuffers(1)
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
-        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf, GL_STATIC_DRAW)
+        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf.tobytes(), GL_STATIC_DRAW)
         self.nvertex=24
 
 class SlabRender(BlockRender):
@@ -144,7 +144,7 @@ class SlabRender(BlockRender):
         ], dtype="float32")
         self.vbo = glGenBuffers(1)
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
-        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf, GL_STATIC_DRAW)
+        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf.tobytes(), GL_STATIC_DRAW)
         self.nvertex=36
         
     def modelmatrix(self, data):
@@ -178,7 +178,7 @@ class RailRender(BlockRender):
         ], dtype="float32")
         self.vbo = glGenBuffers(1)
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
-        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf, GL_STATIC_DRAW)
+        glBufferData(GL_ARRAY_BUFFER, len(self.databuf) * 4, self.databuf.tobytes(), GL_STATIC_DRAW)
         
         self.databuf2 = np.array([
              0.5, 0.5,-0.5,1,1, -0.5, 0.5,-0.5,0,1, -0.5,-0.5, 0.5,0,0,
@@ -186,7 +186,7 @@ class RailRender(BlockRender):
         ], dtype="float32")        
         self.vbo2 = glGenBuffers(1)
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo2)
-        glBufferData(GL_ARRAY_BUFFER, len(self.databuf2) * 4, self.databuf2, GL_STATIC_DRAW)
+        glBufferData(GL_ARRAY_BUFFER, len(self.databuf2) * 4, self.databuf2.tobytes(), GL_STATIC_DRAW)
         self.nvertex=6
         
     def modelmatrix(self, data):
@@ -331,10 +331,14 @@ class SandstoneRender(BlockRender):
             
 class MCData():
     def _load_texture(self, filename):        
-        textureSurface = pygame.image.load("images/" + filename).convert_alpha()
-        textureData = pygame.image.tostring(textureSurface,"RGBA",1)
-        width = textureSurface.get_width()
-        height = textureSurface.get_height()
+        #textureSurface = pygame.image.load("images/" + filename).convert_alpha()
+        #textureData = pygame.image.tostring(textureSurface,"RGBA",1)
+        im = Image.open("images/" + filename)
+        im = im.convert("RGBA")
+        width, height, textureData = im.size[0], im.size[1], im.tobytes("raw", "RGBA", 0, -1)
+        
+        #width = textureSurface.get_width()
+        #height = textureSurface.get_height()
         texid = glGenTextures(1)
         glBindTexture(GL_TEXTURE_2D, texid)
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, textureData)
